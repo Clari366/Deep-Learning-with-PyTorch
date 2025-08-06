@@ -15,7 +15,8 @@ Perform standard imports
 - Import `torch` and `NumPy`.
 
 ```python
-# YOUR CODE HERE
+import torch
+import numpy as np
 ```
 
 ### Step 2:
