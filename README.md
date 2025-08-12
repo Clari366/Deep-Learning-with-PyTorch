@@ -23,49 +23,64 @@ import numpy as np
 Set the random seed for NumPy and PyTorch both to `42`.
 
 ```python
-# YOUR CODE HERE
+import numpy as np
+import torch
+
+np.random.seed(42) 
+torch.manual_seed(42) 
 ```
 
 ### Step 3:
 Create a NumPy array called `arr` that contains 6 random integers between 0 (inclusive) and 5 (exclusive).
 
 ```python
-# YOUR CODE HERE
+arr = np.random.randint(0, 5, size=6)
+
+print(arr)
 ```
 
 ### Step 4:
 Create a tensor `x` from the array above.
 
 ```python
-# YOUR CODE HERE
+x = torch.from_numpy(arr)
+
+print(x)
 ```
 
 ### Step 5:
 Change the dtype of `x` from `int32` to `int64`.
 
 ```python
-# YOUR CODE HERE
+x = x.type(torch.int64)
+
+print(x)
+print(x.dtype) 
 ```
 
 ### Step 6:
 Reshape `x` into a `3x2` tensor.
 
 ```python
-# YOUR CODE HERE
+x = x.view(3, 2)   # or x.reshape(3, 2)
+
+print(x)
 ```
 
 ### Step 7:
 Return the right-hand column of tensor `x`.
 
 ```python
-# YOUR CODE HERE
+right_col = x[:, 1]
+
+print(right_col)
 ```
 
 ### Step 8:
 Without changing `x`, return a tensor of square values of `x`.
 
 ```python
-# YOUR CODE HERE
+squares = x ** 2   
 ```
 
 ### Step 9:
@@ -73,14 +88,19 @@ Create a tensor `y` with the same number of elements as `x`, that can be matrix-
 - Use PyTorch directly (not NumPy) to create a tensor of random integers between 0 (inclusive) and 5 (exclusive).
 
 ```python
-# YOUR CODE HERE
+y = torch.randint(0, 5, (2, 3))  # random integers [0, 5), shape (2, 3)
+
+print(y)
+print(y.shape) 
 ```
 
 ### Step 10:
 Find the matrix product of `x` and `y`.
 
 ```python
-# YOUR CODE HERE
+product = torch.matmul(x, y)   # or x @ y
+
+print(product)
 ```
 
 ## Output:
